@@ -10,7 +10,7 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent implements OnInit {
 
-  loginUserData = {}
+  loginUserData: any;
   isError = false;
   errorMsg;
   constructor(private _auth: AuthService,
@@ -36,11 +36,11 @@ export class LoginComponent implements OnInit {
             this._router.navigate(['/login']);
           }
         },
-        err =>  {
+        err => {
           this.isError = true;
           this.errorMsg = err.error.error.message;
           console.log(this.isError, this.errorMsg);
-        } 
+        }
       )
   }
 
