@@ -14,7 +14,8 @@ export class RegisterComponent implements OnInit {
   mobileNumber: String;
   emailId: String;
   password: String;
-
+  isError = false;
+  errorMsg;
   registerUserData: any;
   constructor(private _auth: AuthService,
     private _router: Router) { }
@@ -36,7 +37,11 @@ export class RegisterComponent implements OnInit {
           // localStorage.setItem('token', res.token)
           this._router.navigate(['/login'])
         },
-        err => console.log(err)
+        err =>  {
+          this.isError = true;
+          this.errorMsg = err.error.error.message;
+          console.log(err);
+        } 
       )
   }
 

@@ -22,6 +22,7 @@ export class BlockComponent implements OnInit {
   viewChainStatus = false;
   peerStatus = false;
   value = '';
+  isEmpty = false;
   constructor(private _blockService: BlockService,
     private _userService: UserService,
     private _router: Router) { }
@@ -76,7 +77,7 @@ export class BlockComponent implements OnInit {
         res => {
           if (res.success) {
             this.chain = res.data;
-            console.log(this.chain);
+            console.log(this.chain.length);
           }
           else {
             console.log('cannot be viewed');

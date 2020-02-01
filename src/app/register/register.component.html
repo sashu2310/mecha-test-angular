@@ -31,6 +31,7 @@
                 <input type="password" [(ngModel)]="password" name="password" class="form-control rounded-0"  required>
               </div>
               <button type="button" (click)="registerUser()" class="btn btn-primary float-right">Register</button>
+              <div>{{errorMsg}}</div>
             </form>
           </div>
           <!--/card-block-->
