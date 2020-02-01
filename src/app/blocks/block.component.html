@@ -1,48 +1,59 @@
 <div>
-  <h1 align = "center" class="card-title">Hi {{firstName}}! Add some blocks </h1>
+  <h1  class="card-title" style="text-align: center">Hi {{firstName}}! Add some blocks </h1>
   <div style="text-align:center;" class="md-button">
     <button type="button" (click)="addBlock()" class="btn btn-success float-center">Add Blocks</button>
     <button type="button" (click)="viewBlock()" class="btn btn-success float-center">View Blocks</button>
     <button type="button" (click)="viewPeers()" class="btn btn-success float-center">View Peers</button>
   </div>
 </div>
-<div *ngIf = "viewChainStatus">
-  <div class="card" *ngFor="let item of chain">
-    {{ item.data }}<br>
-    {{ item.prevHash }}
-  </div>
-  <p><i class="down"></i></p>
-</div>
-<ng-container *ngIf = "peerStatus">
-  <div *ngFor="let item of peers">
-    {{ item.firstName }}
-  </div>
-</ng-container>
-<div *ngIf = "addBlockStatus" >
-  <!-- form card login -->
-  <div class="card rounded-0">
-    <div class="card-header">
-      <h3 class="mb-0">Add Block</h3>
+<div class="block" *ngIf="viewChainStatus">
+  <div *ngFor="let item of chain">
+    <div class="card" style="width: 18rem;">
+      <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+      <div class="card-body">
+        <h5 class="card-title"> {{ item.data }}</h5>
+        <p class="card-text"> {{ item.prevHash }}</p>
+      </div>
     </div>
-    <!-- ---------------------------------------------------------------------------------------------------- -->
-    <!-- <div class="card">
+   <div class="arrow"> <img  src="../../assets/image/images.png" height="60" width="60" alt="Block link"></div>
+</div>
+</div>
+    <div class="block" *ngIf="peerStatus">
+      <div *ngFor="let item of peers">
+        <div class="card" style="width: 18rem;">
+          <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+          <div class="card-body">
+            <h5 class="card-title"> {{ item.firstName }}</h5>
+          </div>
+        </div>
+       <div class="arrow"> <img  src="../../assets/image/images.png" height="60" width="60" alt="Block link"></div>
+    </div>
+    </div>
+    <div *ngIf="addBlockStatus">
+      <!-- form card login -->
+      <div class="card rounded-0">
+        <div class="card-header">
+          <h3 class="mb-0">Add Block</h3>
+        </div>
+        <!-- ---------------------------------------------------------------------------------------------------- -->
+        <!-- <div class="card">
       <img src="img_avatar.png" alt="Avatar" style="width:100%">
       <div class="container">
         <h4><b>John Doe</b></h4>
         <p>Architect & Engineer</p>
       </div>
     </div> -->
-    <!-- ------------------------------------------------------------------------------------------- -->
-    <div class="card-body">
-      <form class="form">
-        <div class="form-group">
-          <label for="uname1">Data</label>
-          <input type="text" class="form-control rounded-0" [(ngModel)]="blockData.data" name="data" required>
+        <!-- ------------------------------------------------------------------------------------------- -->
+        <div class="card-body">
+          <form class="form">
+            <div class="form-group">
+              <label for="uname1">Data</label>
+              <input type="text" class="form-control rounded-0" [(ngModel)]="blockData.data" name="data" required>
+            </div>
+            <button type="button" (click)="addingBlock()" class="btn btn-success float-right">ADD</button>
+          </form>
         </div>
-        <button type="button" (click)="addingBlock()" class="btn btn-success float-right">ADD</button>
-      </form>
+        <!--/card-block-->
+      </div>
+      <!-- /form card login -->
     </div>
-    <!--/card-block-->
-  </div>
-  <!-- /form card login -->
-</div>

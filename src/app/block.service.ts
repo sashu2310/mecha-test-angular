@@ -7,7 +7,7 @@ export class BlockService {
   headers = {
     'Content-Type': 'application/json',
     'token': this.token,
-    'x-api-key': 'config.apikey'
+    'x-api-key': 'BJIPIDuWMR3qK6lzQgYQmjNq7eh8QpR6BofUeYIDGBEx'
   };
   options = { headers: this.headers };
   constructor(private http: HttpClient) { }
@@ -18,8 +18,8 @@ export class BlockService {
   }
 
   viewChain(id) {
+    console.log(this.options);
     const _viewBlock = `http://localhost:5000/test/blockchain/${id}`;
-    
     return this.http.get<any>(_viewBlock, this.options);
   }
 }

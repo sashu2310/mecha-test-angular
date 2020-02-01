@@ -20,18 +20,36 @@
   text-align: center;
 }
 
-.card {
-  /* text-align: auto; */
+/* .card {
+  
   text-transform: uppercase;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   width: auto;
   align-items: center;
-}
+} */
 
 .down {
   color: black;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  margin-top: 30px;
+}
+.block{
+  align-self: auto;
+}
+  .card:hover {
+  transform: translateY(-15px) scale(1.025)
+  }
+  
+  .arrow{
+    text-align: center;
+    margin-top: 35px;
 }

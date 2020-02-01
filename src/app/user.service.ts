@@ -7,7 +7,7 @@ export class UserService {
     headers = {
       'Content-Type': 'application/json',
       'token': this.token,
-      'x-api-key': 'config.apikey'
+      'x-api-key': 'BJIPIDuWMR3qK6lzQgYQmjNq7eh8QpR6BofUeYIDGBEx'
     };
     options = { headers: this.headers };
 

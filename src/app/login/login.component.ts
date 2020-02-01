@@ -10,6 +10,8 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent implements OnInit {
 
+  username: String;
+  password: String;
   loginUserData: any;
   isError = false;
   errorMsg;
@@ -20,6 +22,10 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
+    this.loginUserData = {
+      username: this.username,
+      password: this.password
+    }
     this._auth.loginUser(this.loginUserData)
       .subscribe(
         res => {

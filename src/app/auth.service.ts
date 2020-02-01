@@ -7,7 +7,7 @@ import { Router } from '@angular/router'
 export class AuthService {
   private _registerUrl = `https://mighty-thicket-25243.herokuapp.com/test/signup`;
   headers = {
-    'x-api-key': 'config.apikey'
+    'x-api-key': 'BJIPIDuWMR3qK6lzQgYQmjNq7eh8QpR6BofUeYIDGBEx'
   }
   options = { headers: this.headers };
   constructor(private http: HttpClient,
