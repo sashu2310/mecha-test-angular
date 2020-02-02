@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlockService } from '../block.service';
 import { UserService } from '../user.service';
-import { Router } from '@angular/router'
-import { element } from 'protractor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'block',
