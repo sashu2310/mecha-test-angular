@@ -19,7 +19,7 @@ export class BlockService {
 
   viewChain(id) {
     console.log(this.options);
-    const _viewBlock = `http://localhost:5000/test/blockchain/${id}`;
+    const _viewBlock = `https://mighty-thicket-25243.herokuapp.com/test/blockchain/${id}`;
     return this.http.get<any>(_viewBlock, this.options);
   }
 }

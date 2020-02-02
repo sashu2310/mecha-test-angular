@@ -7,6 +7,7 @@ import { Router } from '@angular/router'
 export class AuthService {
   private _registerUrl = `https://mighty-thicket-25243.herokuapp.com/test/signup`;
   headers = {
+    'content-type': 'application/json',
     'x-api-key': 'BJIPIDuWMR3qK6lzQgYQmjNq7eh8QpR6BofUeYIDGBEx'
   }
   options = { headers: this.headers };
@@ -14,11 +15,11 @@ export class AuthService {
     private _router: Router) { }
 
   registerUser(user) {
-    return this.http.post<any>(this._registerUrl, user)
+    return this.http.post<any>(this._registerUrl, user, this.options);
   }
 
   loginUser(user) {
-    const url = `http://localhost:5000/test/login/username/${user.username}/password/${user.password}`;
+    const url = `https://mighty-thicket-25243.herokuapp.com/test/login/username/${user.username}/password/${user.password}`;
     return this.http.get<any>(url, this.options);
   }
 
